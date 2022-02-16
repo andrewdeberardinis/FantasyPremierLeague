@@ -12,10 +12,11 @@ public class Player
 		private int dribbling;
 		private int defending;
 		private int physical;
+		private int position;
 		
 		
 
-		public Player ( String fn, String ln, double p, String t, int pa, int sh, int pas, int dr, int de, int phy)
+		public Player ( String fn, String ln, double p, String t, int pa, int sh, int pas, int dr, int de, int phy, int pos)
 		{
 			firstName = fn;
 			lastName = ln;
@@ -27,8 +28,23 @@ public class Player
 			dribbling = dr;
 			defending = de;
 			physical = phy;
+			position = pos;
 			
 		}
+
+
+
+		public int getPosition()
+			{
+				return position;
+			}
+
+
+
+		public void setPosition(int position)
+			{
+				this.position = position;
+			}
 
 
 

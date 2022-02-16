@@ -19,12 +19,7 @@ public class FPLRunner
 		{
 
 					CreatePlayer();
-					
-					
-				
-			
 
-			
 		}
 		
 				public static void CreatePlayer()
@@ -70,13 +65,19 @@ public class FPLRunner
 						
 						int price = pace + shooting + passing + dribbling + defending + physical;
 						
+						price = price *10;
+						
+						int position = 0;
+						
+
+						
 						//displays price and asks user if they want to purchase
 						System.out.println("Based on the stats, this is your player's price:" + price);		
 						System.out.println("Would you like to add this player to your squad? (y/n)");
 						String confirm = supa.nextLine();
 						if(confirm.equals("y"))
 							{
-								playerList.add(new Player(firstName, lastName, price, teamName, pace, shooting, passing, dribbling, defending, physical));
+								playerList.add(new Player(firstName, lastName, price, teamName, pace, shooting, passing, dribbling, defending, physical, position));
 							}
 						
 						else
@@ -94,6 +95,7 @@ public class FPLRunner
 					for(Player p: playerList)
 						{
 							
+							if()
 							System.out.println(p.getFirstName() + " " + p.getLastName());
 							
 							
@@ -101,7 +103,45 @@ public class FPLRunner
 						}
 				}
 				
-				
+				public static void positionAlg()
+				{
+									if(defending > 80 && shooting < 65)
+							{
+								position = 4;
+								
+							}
+						
+						else if(pace > 82 && passing > 80 && shooting < 65)
+							{
+								position = 2;
+							}
+						
+						else if(shooting > 65 && defending > 78 && physical > 85)
+							{
+								position = 6;
+							}
+						
+						else if(pace > 85 && shooting > 80 && dribbling > 88)
+							{
+								position = 7;
+							}
+						
+						else if(passing > 85 && dribbling > 85 && shooting > 85 && defending > 55)
+							{
+								position = 10;
+							}
+						
+						else if(shooting > 88 && dribbling > 85 && defending < 55)
+							{
+								position = 9;
+							}
+						
+						else
+							{
+								position = 0;
+							}
+				}
+						
 
 
 	}

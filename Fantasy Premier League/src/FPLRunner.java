@@ -5,6 +5,13 @@ public class FPLRunner
 	{
 		public static ArrayList<Player> playerList = new ArrayList<Player>();
 		
+		public static int pace;
+		public static int shooting;
+		public static int passing;
+		public static int dribbling;
+		public static int defending;
+		public static int physical;
+		public static int position;
 		
 		public static void main(String[] args)
 			{
@@ -45,29 +52,30 @@ public class FPLRunner
 						
 						System.out.println("Now you will select your player's stats");
 						System.out.println("Pace:");
-						int pace = supa.nextInt();
+						pace = supa.nextInt();
 						
 						System.out.println("Shooting:");
-						int shooting = supa.nextInt();
+						shooting = supa.nextInt();
 						
 						System.out.println("Passing:");
-						int passing = supa.nextInt();
+						passing = supa.nextInt();
 						
 						System.out.println("Dribbling:");
-						int dribbling = supa.nextInt();
+						dribbling = supa.nextInt();
 						
 						System.out.println("Defending:");
-						int defending = supa.nextInt();
+						defending = supa.nextInt();
 						
 						System.out.println("Physical");
-						int physical = supa.nextInt();
+						physical = supa.nextInt();
 
 						
 						int price = pace + shooting + passing + dribbling + defending + physical;
 						
 						price = price *10;
 						
-						int position = 0;
+						//gives player position based on stats entered
+						positionAlg();
 						
 
 						
@@ -105,7 +113,7 @@ public class FPLRunner
 				
 				public static void positionAlg()
 				{
-									if(defending > 80 && shooting < 65)
+						if(defending > 80 && shooting < 65)
 							{
 								position = 4;
 								
@@ -143,5 +151,41 @@ public class FPLRunner
 				}
 						
 
+				
+				public static void field()
+				{
+					System.out.println(" ______________________________________________________________________");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                   " + p.getFirstName() + p.getLastName + "                                   |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|                                                                      |");
+					System.out.println("|          __________________________________________________          |");
+					System.out.println("|         |                                                  |         |");
+					System.out.println("|         |                                                  |         |");
+					System.out.println("|         |                         _                        |         |");
+					System.out.println("|         |                                                  |         |");
+					System.out.println("|         |                                                  |         |");
+					System.out.println("|         |              ______________________              |         |");
+					System.out.println("|         |             |                      |             |         |");
+					System.out.println("|         |             |                      |             |         |");
+					System.out.println("|_________|_____________|______________________|_____________|_________|");
+				}
 
 	}

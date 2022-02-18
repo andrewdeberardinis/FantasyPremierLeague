@@ -5,6 +5,8 @@ public class FPLRunner
 	{
 		public static ArrayList<Player> playerList = new ArrayList<Player>();
 		
+		
+		
 		public static int pace;
 		public static int shooting;
 		public static int passing;
@@ -21,11 +23,14 @@ public class FPLRunner
 
 			}
 		
+		
+		
 
 		public static void RunIt()
 		{
 
 					CreatePlayer();
+					displayPlayers();
 
 		}
 		
@@ -66,7 +71,7 @@ public class FPLRunner
 						System.out.println("Defending:");
 						defending = supa.nextInt();
 						
-						System.out.println("Physical");
+						System.out.println("Physical:");
 						physical = supa.nextInt();
 
 						
@@ -82,15 +87,32 @@ public class FPLRunner
 						//displays price and asks user if they want to purchase
 						System.out.println("Based on the stats, this is your player's price:" + price);		
 						System.out.println("Would you like to add this player to your squad? (y/n)");
+						System.out.println();
 						String confirm = supa.nextLine();
 						if(confirm.equals("y"))
 							{
+								System.out.println("Congrats on signing" + firstName + " " + lastName + "to your squad");
 								playerList.add(new Player(firstName, lastName, price, teamName, pace, shooting, passing, dribbling, defending, physical, position));
-							}
+						
+						}
 						
 						else
 							{
 								j--;
+							}
+						
+					
+						System.out.println("Would you like to see the current list?");
+						String display = supa.nextLine(); 
+						if(display.equals("y"))
+							{
+								System.out.println("Here is the current squad list:");
+								displayPlayers();
+							}
+						
+						else 
+							{
+								System.out.println();
 							}
 						
 						
@@ -98,17 +120,21 @@ public class FPLRunner
 					}
 			}
 				
+				
+		
+				
 				public static void displayPlayers()
 				{
-					for(Player p: playerList)
-						{
+					
 							
-							if()
-							System.out.println(p.getFirstName() + " " + p.getLastName());
+							for(Player p: playerList)
+								{
+									
+							System.out.println(p.getPosition() + " : " + p.getFirstName() + " " + p.getLastName() );
+								}
 							
 							
-							
-						}
+						
 				}
 				
 				public static void positionAlg()
@@ -152,11 +178,13 @@ public class FPLRunner
 						
 
 				
-				public static void field()
+				public static void field(Player p)
 				{
+					
+				
 					System.out.println(" ______________________________________________________________________");
 					System.out.println("|                                                                      |");
-					System.out.println("|                                   " + p.getFirstName() + p.getLastName + "                                   |");
+					System.out.println("|                                   " + p.getFirstName() + p.getLastName() + "                                   |");
 					System.out.println("|                                                                      |");
 					System.out.println("|                                                                      |");
 					System.out.println("|                                                                      |");
@@ -187,5 +215,10 @@ public class FPLRunner
 					System.out.println("|         |             |                      |             |         |");
 					System.out.println("|_________|_____________|______________________|_____________|_________|");
 				}
+					
+			
+				
+		}
+	
 
-	}
+	
